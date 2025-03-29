@@ -1,0 +1,302 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/styles/assets/Create a visually stunning, futuristic scene of high-tech PCs transferring data between each other i 21-03-2025 at 01-11-58.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Futuristic border */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6); /* Glow effect */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.app-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+.logout-button {
+    background: linear-gradient(135deg, #ff512f, #f09819);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(255, 81, 47, 0.3);
+}
+
+.logout-button:hover {
+    background: linear-gradient(135deg, #f09819, #ff512f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 81, 47, 0.5);
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    padding: 100px 20px 20px;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+/* Upload Container Styles */
+.upload-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    color: #ffffff;
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Futuristic border */
+}
+
+.upload-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drag-drop-area {
+    border: 2px dashed #007bff;
+    border-radius: 6px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.drag-drop-area p {
+    color: #dddddd;
+}
+
+.drag-drop-area .upload-icon {
+    font-size: 50px;
+    color: #007bff;
+}
+
+.drag-drop-area.drag-over {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.file-input {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #dddddd;
+}
+
+.input-group {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.text-input:focus {
+    border-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.upload-button {
+    background: linear-gradient(135deg, #323fb0, #17327b);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(25, 25, 199, 0.3);
+}
+
+.upload-button:hover {
+    background: linear-gradient(135deg, #220b6b, #081260);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(38, 50, 189, 0.5);
+}
+
+/* Uploaded Files Container Styles */
+.uploaded-files-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    width: 600px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.uploaded-files-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.uploaded-files-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.uploaded-files-table th,
+.uploaded-files-table td {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #ffffff;
+}
+
+.uploaded-files-table th {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+/* Button Styles */
+.share-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.share-button:hover {
+    color: #06468a;
+    transform: scale(1.1);
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.delete-button:hover {
+    color: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Scrollbar Styling */
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upload-container,
+    .uploaded-files-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
