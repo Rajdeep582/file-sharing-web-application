@@ -28,7 +28,7 @@ public class fileController {
     }
 
 
-        @GetMapping("/home")
+    @GetMapping("/home")
     public String listFiles( Model model) {
             model.addAttribute("files", fileService.getAllFiles());
             return "list-files";
@@ -46,8 +46,8 @@ public class fileController {
 
 
 
-       @GetMapping("/share/{id}")
-    public String shareFile(@PathVariable("id") int id, Model model) {
+     @GetMapping("/share/{id}")
+     public String shareFile(@PathVariable("id") int id, Model model) {
         ResponseEntity<?> fileModel = fileService.shareFile(id);
         if(fileModel.hasBody()) {
             String currentUrl = ServletUriComponentsBuilder.fromCurrentRequestUri().toUriString();
