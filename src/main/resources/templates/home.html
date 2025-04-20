@@ -1,53 +1,77 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>File Sharing Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/106a3659bb.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <title>Share Boundless</title>
     <link th:href="@{/styles/css/homestyle.css}" rel="stylesheet" />
+
 </head>
 <body>
-    <div class="header-test">
-        <h1 class="header-title">File Sharing App</h1>
-        <h3 class="header-line">Effortless Sharing, Boundless Possibilities</h3>
-    </div>
 
-    
+<div class="header-test">
+    <h1 class="header-title">File Sharing Application</h1>
+    <h3 class="header-line">Seamless and Carefree — Share Wildly and Freely!</h3>
+    <button class="share-btn">Share</button>
+</div>
 
-    <div class="card-container">
-        <div class="card">
-            <div class="card-front">
-                <h3>About</h3><br>
-                <p>Welcome to our innovative file-sharing platform, designed to make transferring files between devices effortless and secure. Whether you're sending documents, photos, videos, or any other type of file, our app provides a seamless experience tailored to your needs.</p>
-                <p>Key Features:<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔸Fast and Secure Transfers<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔸User-Friendly Interface<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔸Cross-Platform Compatibility<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔸No Size Limits<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🔸Real-Time Collaboration<br><br>
-                    Discover a new way of sharing files with convenience and security. Join us and start sharing smarter today!</p>
-                <button class="login-btn">Login</button>
-            </div>
-            <div class="card-back">
-                <form>
-                    <h3>Login Here</h3>
-                    <div class="social">
-                        <a href="/oauth2/authorization/google" class="go"><i class="fab fa-google"></i> Google</a>
-                        <a href="/oauth2/authorization/github" class="gitHub"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                    <p class="about-btn">Back</p>
-                </form>
-            </div>
+<div class="card-container" id="popupCard">
+    <div class="card">
+        <div class="card-front">
+            <h3>About</h3><br>
+            <p>Welcome to my smart and secure file-sharing platform — crafted for smooth, safe, and simple file transfers. Whether it’s documents, images, videos, or any other files, experience a frictionless way to send and receive across devices.</p>
+            <p><strong>Key Features:</strong><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;🔸 Lightning-Fast, End-to-End Secure Transfers<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;🔸 Intuitive & Effortless User Experience<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;🔸 Compatible Across All Devices & Platforms<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;🔸 No Limits on File Size — Share Without Boundaries<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;🔸 Real-Time Collaboration, Instant Connection<br><br>
+                Discover a smarter, safer, and more reliable way to share files. Join us today and start sharing with confidence!
+            </p>
+            <button class="login-btn">Login</button>
+        </div>
+
+        <div class="card-back">
+            <form>
+                <h3 class="login-here">Login Here</h3>
+                <div class="social">
+                    <a href="/oauth2/authorization/google" class="go"><i class="fab fa-google"></i> Google</a>
+                    <a href="/oauth2/authorization/github" class="gitHub"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+                <button class="about-btn">Back</button>
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        document.querySelector('.login-btn').addEventListener('click', function () {
-            document.querySelector('.card').classList.toggle('flipped');
-        });
-        document.querySelector('.about-btn').addEventListener('click', function () {
-            document.querySelector('.card').classList.toggle('flipped');
-        });
-    </script>
+<script>
+    document.querySelector('.login-btn').addEventListener('click', function () {
+     document.querySelector('.card').classList.add('flipped');
+ });
+
+ document.querySelector('.about-btn').addEventListener('click', function (event) {
+     event.preventDefault();  // prevent form submit
+     document.querySelector('.card').classList.remove('flipped');
+ });
+
+ document.querySelector('.share-btn').addEventListener('click', function () {
+     document.getElementById('popupCard').style.display = 'flex';
+ });
+
+ window.addEventListener('click', function(e) {
+     const popupCard = document.getElementById('popupCard');
+     const card = document.querySelector('.card');
+
+     if (popupCard.style.display === 'flex' && !card.contains(e.target) && e.target !== document.querySelector('.share-btn')) {
+         popupCard.style.display = 'none';
+         document.querySelector('.card').classList.remove('flipped');  // Reset to front side.
+     }
+ });
+
+
+
+</script>
+
 </body>
 </html>

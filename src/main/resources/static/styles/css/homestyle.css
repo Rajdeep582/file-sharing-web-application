@@ -5,11 +5,11 @@
 }
 
 body {
-    background-image: url('/styles/assets/Create a visually stunning, futuristic scene of high-tech PCs transferring data between each other i 21-03-2025 at 01-17-35.jpeg');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-image: url('/styles/assets/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
@@ -22,9 +22,9 @@ nav {
     line-height: 95px;
     padding: 0 70px;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for nav */
-    backdrop-filter: blur(10px); /* Adds a blur effect */
-    z-index: 1000; /* Ensures nav stays on top */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 nav .logo p {
@@ -39,10 +39,12 @@ nav .logo p {
 
 .header-test {
     color: #fff;
-    margin-left: 150px;
+    /* margin-left: 150px; */ /* Remove this */
     position: relative;
     top: 150px;
+    text-align: center;
 }
+
 
 .header-title {
     font-size: 80px;
@@ -54,42 +56,53 @@ nav .logo p {
     margin-left: 120px;
 }
 
-/* Animation Container */
-.animation-container {
-    position: relative;
-    height: 300px;
-    margin: 50px auto;
-    width: 80%;
-    max-width: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Center the Share Button */
+.share-btn {
+    display: inline-block; /* Makes the button a block element */
+    margin-top: 20px; /* Adds space between header and button */
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #7e64b6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* 3D Shadow */
+    box-shadow: 0 6px 0 #5b4a8c,
+                0 9px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* New Image Styling */
-.new-image {
-    width: 100%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 600px; /* Limit maximum size */
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)); /* Add a subtle shadow */
+.share-btn:hover {
+    background-color: #8a7db0;
+
+    /* Lift up effect */
+    transform: translateY(-4px);
+    box-shadow: 0 4px 0 #5b4a8c,
+                0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Hide the dotted path */
-.dotted-path {
-    display: none;
+.share-btn:active {
+    background-color: #7a6ca3;
+
+    /* Push down effect */
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #5b4a8c,
+                0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.background {
-    display: none; /* Hide the existing background shapes */
-}
 
 /* Card Container */
 .card-container {
     perspective: 1000px;
-    position: absolute;
+    position: fixed;
     top: 50%;
-    left: 80%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
+    z-index: 2000;
 }
 
 .card {
@@ -97,11 +110,12 @@ nav .logo p {
     height: 520px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.8s;
+    transition: transform 1s ease-in-out;
 }
 
 .card.flipped {
     transform: rotateY(180deg);
+    transition: 1s ease-in-out;
 }
 
 .card-front,
@@ -110,9 +124,9 @@ nav .logo p {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: #ffffff21;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(15px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 10px;
@@ -127,8 +141,10 @@ nav .logo p {
 }
 
 .card h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
     font-size: 32px;
+    font-weight: bold;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
@@ -136,25 +152,41 @@ nav .logo p {
 }
 
 .card p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #fff;
     margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .login-btn {
     margin-top: 50px;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
+    background-color: #67568c;
+    color: #ffffff;
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     outline: none;
     border: none;
+    box-shadow: 0 8px 0 #4c3e66, 0 15px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
 }
+
+.login-btn:hover {
+    background-color: #7a6f9c;
+    box-shadow: 0 9px 0 #4c3e66, 0 20px 25px rgba(0, 0, 0, 0.35);
+}
+
+.login-btn:active {
+    background-color: #5b4f7c;
+    box-shadow: 0 5px 0 #4c3e66, 0 8px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(4px);
+}
+
+
 
 form {
     font-family: 'Poppins', sans-serif;
@@ -221,18 +253,40 @@ button[type="submit"] {
     color: #eaf0fb;
     text-decoration: none;
     text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Light shadow */
 }
 
+/* 3D Effect for Google Button */
 .social .go {
     width: 100%;
     margin-top: 10px;
     margin-left: 25px;
+    border-radius: 15px;
+    background-color: #4285F4;  /* Google's blue */
+    color: white;
 }
 
+.social .go:hover {
+    background-color: #357ae8; /* Darker on hover */
+    transform: translateY(-3px); /* Lift the button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+}
+
+/* 3D Effect for GitHub Button */
 .social .gitHub {
     width: 100%;
     margin-top: 10px;
     margin-left: 25px;
+    border-radius: 15px;
+    background-color: #333333;  /* GitHub black */
+    color: white;
+}
+
+.social .gitHub:hover {
+    background-color: #24292e;  /* Slightly darker GitHub black */
+    transform: translateY(-3px); /* Lift the button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Stronger shadow */
 }
 
 .social i {
@@ -243,8 +297,72 @@ button[type="submit"] {
     background-color: rgba(255, 255, 255, 0.47);
 }
 
+
 .about-btn {
     margin: 10px;
     cursor: pointer;
     float: right;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #7e64b6; /* Example color for the button */
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Light shadow */
 }
+
+/* 3D Effect on Hover */
+.about-btn:hover {
+    background-color: #8c6fc9; /* Slightly darker shade on hover */
+    transform: translateY(-3px); /* Lift the button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+}
+
+.about-btn:active {
+    transform: translateY(2px); /* Pressed effect when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Lighter shadow when pressed */
+}
+
+.login-here {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold; /* Make the text bold */
+    color: #211b1b; /* White color for the text */
+    text-transform: uppercase; /* Capitalize the text */
+    letter-spacing: 1px; /* Add some space between letters for a cool effect */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    text-align: center; /* Center align the text */
+    animation: flicker 3s infinite; /* Slow flickering animation */
+}
+
+/* Define the flickering animation */
+@keyframes flicker {
+    0% {
+        opacity: 1; /* Fully lit */
+    }
+    15% {
+        opacity: 0.7; /* Slightly dim */
+    }
+    30% {
+        opacity: 1; /* Lit up again */
+    }
+    45% {
+        opacity: 0.4; /* Dim again */
+    }
+    60% {
+        opacity: 1; /* Lit up again */
+    }
+    75% {
+        opacity: 0.2; /* Flickering dim */
+    }
+    90% {
+        opacity: 1; /* Fully lit */
+    }
+    100% {
+        opacity: 0.5; /* Slight dim before the end */
+    }
+}
+
+
+
