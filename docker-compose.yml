@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root@029
+      MYSQL_DATABASE: cw_files_prj
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  file-sharing-app:
+    build: .
+    container_name: file-sharing-app
+    ports:
+      - "9090:9090"
+    environment:
+      DB_URL: jdbc:mysql://mysql-db:3306/cw_files_prj
+      DB_USERNAME: root
+      DB_PASSWORD: root@029
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+    depends_on:
+      - mysql-db
+
+volumes:
+  mysql_data:
